@@ -1,0 +1,4 @@
+prometheus:
+  prometheusSpec:
+    remoteWrite:
+      - url: 'http://storage-adapter-service.default.svc.cluster.local/receive'

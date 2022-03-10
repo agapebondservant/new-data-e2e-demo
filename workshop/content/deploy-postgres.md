@@ -288,7 +288,7 @@ printf "Under General tab:\n  Server: pginstance-1.{{session_namespace}}\nUnder 
 (When done, select the server "Servers" and click "Remove Server".)
 
 
-<font color="red"><b>NOTE: Restore default context before proceeding.</b></font>
+<font color="red"><b>NOTE: Restore default context and other default settings before proceeding.</b></font>
 ```execute
-kubectl config set-context --current --namespace={{session_namespace}}
+kubectl config set-context --current --namespace={{session_namespace}}; mc rm -r --force --insecure data-fileingest-minio/pg-backups
 ```

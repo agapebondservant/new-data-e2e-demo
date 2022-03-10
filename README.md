@@ -152,8 +152,13 @@ helm repo update
 #helm install prometheus bitnami/kube-prometheus --namespace monitoring-tools
 helm repo add prometheus-community https://prometheus-community.github.io/helm-charts
 helm install prometheus prometheus-community/kube-prometheus-stack --create-namespace --namespace=monitoring-tools \
---set prometheus.service.port=8000 --set prometheus.service.type=ClusterIP --wait
+--set prometheus.service.port=8000 --set prometheus.service.type=ClusterIP --wait 
+#-f resources/prometheus-values.yaml
 kubectl apply -f resources/prometheus-httpproxy.yaml
+- Setup Wavefront Storage Adapter for Prometheus:
+#docker pull projects.registry.vmware.com/tanzu_observability/proxy:10.13
+#docker tag projects.registry.vmware.com/tanzu_observability/proxy:10.13 oawofolu/tanzu_observability_proxy:10.13 
+#docker push projects.registry.vmware.com/tanzu_observability/proxy:10.13
 
 - Grafana:
 helm install grafana bitnami/grafana --namespace monitoring-tools
