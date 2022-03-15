@@ -165,12 +165,20 @@ kubectl apply -f ~/other/resources/postgres/postgres-pod-monitor.yaml
 Next, navigate to the Prometheus UI, select Status -> Targets and click "Collapse All" - _podMonitor_ metrics 
 should be shown (<font color="red">NOTE:</font> Wait for a few seconds if the metrics do not show up right away):
 ```dashboard:open-url
-name: Prometheus
 url: http://prometheus.mytanzu.ml
 ```
 
-<font color="red">NOTE:</font> To view specific metrics collected by Prometheus, go the the Prometheus UI Home screen by 
+<font color="red">NOTE:</font> To view specific metrics collected by Prometheus, go to the Prometheus UI Home screen by 
 clicking on "Prometheus" in the menu bar, and enter **pg** in the Search bar. A list of metrics should be populated in the field.
+
+The exposed Prometheus metrics can also be consumed by **Wavefront** using its **Wavefront Storage Adapter**, which creates a _fork_ 
+from the existing Prometheus metrics and forwards them to a local Wavefront proxy. In turn, the Wavefront proxy batches the metrics 
+and forwards them to Wavefront.
+
+View the Wavefront Dashboard:
+```dashboard:open-url
+url: https://vmware.wavefront.com/u/xgZzKR0zk8?t=vmware
+```
 
 #### Backups and Restores
 Tanzu Postgres includes **pgbackrest** as its backup-restore solution for **pgdata** backups, using an S3-compatible store. Here, we will use **Minio** for backup storage.

@@ -22,5 +22,6 @@ other/resources/postgres/postgres-backup-location.yaml
 other/resources/postgres/postgres-cluster-with-backups.yaml
 other/resources/datadog/data-dog-with-db-config.yaml
 resources/tap-gui-values.yaml
+resources/wavefront-integrations.yaml
 other/resources/bin/argocd
 tmp/
