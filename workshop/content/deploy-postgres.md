@@ -150,7 +150,7 @@ and forwards them to Wavefront.
 
 View the Wavefront Dashboard:
 ```dashboard:open-url
-url: https://vmware.wavefront.com/u/9cBZt51YkS?t=vmware
+url: https://vmware.wavefront.com/u/FNtSxDvS8k?t=vmware
 ```
 
 Generate random data that can be visualized via the dashboard. 
