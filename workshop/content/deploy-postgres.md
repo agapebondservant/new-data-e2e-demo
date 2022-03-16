@@ -224,7 +224,7 @@ file: ~/other/resources/postgres/postgres-backup-location.yaml
 
 Deploy the configuration for the backup location:
 ```execute
-kubectl  apply -f ~/other/resources/postgres/postgres-backup-location.yaml  -n {{ session_namespace }}
+kubectl replace -f ~/other/resources/postgres/postgres-backup-location.yaml  -n {{ session_namespace }}
 ```
 
 Let's take a look at the backup configuration that was just deployed:
@@ -239,7 +239,7 @@ file: ~/other/resources/postgres/postgres-backup.yaml
 
 Deploy the backup definition. <font color="red">TODO - wait for the 3 Postgres instance nodes to be restored first.</font>
 ```execute
-kubectl replace -f ~/other/resources/postgres/postgres-backup.yaml -n {{ session_namespace }}
+kubectl apply -f ~/other/resources/postgres/postgres-backup.yaml -n {{ session_namespace }}
 ```
 
 View the generated backup files on Minio:
